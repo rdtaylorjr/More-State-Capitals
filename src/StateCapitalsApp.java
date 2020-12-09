@@ -1,8 +1,6 @@
 import java.io.File;
 import java.io.IOException;
-import java.util.HashMap;
-import java.util.Scanner;
-import java.util.Set;
+import java.util.*;
 
 /**
  * Exercise 5: More State Capitals
@@ -40,12 +38,12 @@ import java.util.Set;
 
 public class StateCapitalsApp {
 
-    private final HashMap<String, Capital> capitals = new HashMap<>();
+    private final Map<String, Capital> capitals = new HashMap<>();
 
     /**
      * Reads input file data and creates a hash map of state capital information.
      */
-    private void createHashMap() throws IOException {
+    private void createMap() throws IOException {
         System.out.println("Importing file data");
         Scanner fin = new Scanner(new File("MoreStateCapitals.txt")).useDelimiter("::|\\r\\n");
 
@@ -64,7 +62,7 @@ public class StateCapitalsApp {
     /**
      * Prints the size of the hash map to the console.
      */
-    private void printHashMapSize() {
+    private void printMapSize() {
         System.out.println("\nNumber of state capitals: " + capitals.size());
     }
 
@@ -114,8 +112,8 @@ public class StateCapitalsApp {
      */
     public static void main(String[] args) throws IOException {
         StateCapitalsApp capitals = new StateCapitalsApp();
-        capitals.createHashMap();
-        capitals.printHashMapSize();
+        capitals.createMap();
+        capitals.printMapSize();
         capitals.printKeyValuePairs();
         capitals.limitPopulation();
         capitals.limitSquareMileage();
